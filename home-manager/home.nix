@@ -3,13 +3,13 @@
   pkgs,
   nix-index-database,
   ...
-}:
-
-{
+}: {
   imports = [
     nix-index-database.homeModules.nix-index
     ./modules/zsh-conf.nix
     ./modules/gtk.nix
+    ./modules/git.nix
+    ./modules/vicinae.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -48,48 +48,69 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #    echo "Hello, ${config.home.username}!"
     # '')
+
+    # System monitoring and hardware control
     btop
+    brightnessctl
+    wireplumber
+
+    # Terminal utilities
+    starship
+    jq
+    ripgrep
+    fd
+    bat
+    p7zip
+    wl-clipboard
+
+    # Terminal user interface (TUI)
     lazygit
     yazi
-    firefox
-    nautilus
+    cava
+    vicinae
+
+    # Desktop environment and Wayland utilities
     quickshell
     awww
     grim
-    qbittorrent
     slurp
-    meson
-    btop
-    obsidian
-    zathura
-    vlc
-    ninja
-    brightnessctl
     wl-mirror
-    wl-clipboard
-    jq
-    wireplumber
+    feh
+    nautilus
+
+    # Web browsers
+    firefox
+    chromium
+
+    # Media and streaming
+    vlc
+    stremio-service
+
+    # Torrenting and file synchronization
+    qbittorrent
+    syncthing
+
+    # Development tools and build systems
     gcc
     gdb
-    syncthing
     gnumake
-    stremio-service
-    ripgrep
+    meson
+    ninja
+    gh
+
+    # Programming languages and package managers
+    python3
+    nodejs
     lua
     luarocks
-    starship
-    fd
-    bat
-    cava
-    chromium
-    feh
-    p7zip
-    vicinae
-    nodejs
+
+    # Productivity and document management
+    obsidian
     libreoffice
-    python3
+    zathura
+
+    # AI and local LLMs
     ollama
-    gcc
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -125,31 +146,5 @@
     enable = true;
     package = pkgs.nix-index;
     enableZshIntegration = true;
-  };
-
-  programs.vicinae = {
-    enable = true;
-    package = pkgs.vicinae;
-    settings = {
-      launcher_window.layer_shell.enabled = true;
-      theme = {
-        dark = {
-          name = "gruvbox-dark";
-        };
-        light = {
-          name = "gruvbox-light";
-        };
-      };
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "George Sandeep";
-        email = "illustrio7077@gmail.com";
-      };
-    };
   };
 }
