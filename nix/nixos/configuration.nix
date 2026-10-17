@@ -89,6 +89,12 @@
 
   virtualisation = {
     containers.enable = true;
+
+    waydroid = {
+      enable = true;
+      package = pkgs.waydroid-nftables;
+    };
+
     podman = {
       enable = true;
       dockerCompat = true;
@@ -99,24 +105,45 @@
   users.users."caveman" = {
     isNormalUser = true;
     description = "caveman";
-    extraGroups = ["networkmanager" "wheel" "video" "audio" "render"];
+    extraGroups = ["networkmanager" "wheel" "video" "audio" "render" "lxc"];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      # Graphics and display utilities
       mesa-demos
       xwayland-satellite
+
+      # VPN and network security
       proton-vpn
       wireguard-tools
+
+      # System monitoring and information
       btop
       fastfetch
+
+      # Bluetooth management
       bluez
       bluetuith
-      wireplumber
-      brightnessctl
-      nh
-      unzip
-      gnumake
+
+      # Audio management
       pipewire
+      wireplumber
+
+      # Hardware control
+      brightnessctl
+
+      # Package management
+      nh
+
+      # Archive utilities
+      unzip
+
+      # Development tools and build systems
+      gnumake
+
+      # Shell customization
       starship
+
+      # Terminal utilities
       bat
       eza
       fzf
@@ -224,6 +251,7 @@
     kitty
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     vim
+    wl-clipboard
   ];
 
   system.activationScripts.copyConfigToGit = {

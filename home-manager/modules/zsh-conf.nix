@@ -17,6 +17,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    completionInit = "autoload -U compinit && compinit -u";
+    # zprof.enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 

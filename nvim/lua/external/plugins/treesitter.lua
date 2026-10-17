@@ -9,6 +9,8 @@ return {
         'c',
         'diff',
         'html',
+        'css',
+        'go',
         'lua',
         'luadoc',
         'markdown',
