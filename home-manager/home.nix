@@ -68,6 +68,7 @@
     yazi
     cava
     vicinae
+    gammastep
 
     # Desktop environment and Wayland utilities
     quickshell
