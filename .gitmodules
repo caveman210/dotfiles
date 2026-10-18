@@ -1,0 +1,4 @@
+[submodule "/home/caveman/.config/quickshell"]
+	path = /home/caveman/.config/quickshell
+	url = https://github.com/caveman210/Quickshell-bar.git
+	branch = Luci-Revamped
