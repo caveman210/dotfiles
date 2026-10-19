@@ -30,5 +30,6 @@ go/
 qBittorrent/
 mimeapps.list
 QtProject.conf
+zen/*
 */.luarc.json
 */.zcompdump

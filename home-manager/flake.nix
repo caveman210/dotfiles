@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +21,7 @@
   outputs = {
     nixpkgs,
     home-manager,
+    zen-browser,
     nix-index-database,
     ...
   } @ inputs: let
@@ -24,7 +30,7 @@
   in {
     nixosConfigurations."caveman" = nixpkgs.lib.nixosSystem {
       system = system; # e.g., x86_64-linux
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         # ... your other configuration modules ...
       ];
@@ -38,7 +44,7 @@
 
     homeConfigurations."caveman" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit nix-index-database;};
+      extraSpecialArgs = { inherit nix-index-database; inherit inputs; };
       modules = [
         ./home.nix
       ];

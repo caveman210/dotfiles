@@ -10,6 +10,7 @@
     ./modules/gtk.nix
     ./modules/git.nix
     ./modules/vicinae.nix
+    ./modules/zen-browser.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -80,7 +81,6 @@
     nautilus
 
     # Web browsers
-    firefox
     chromium
 
     # Media and streaming
