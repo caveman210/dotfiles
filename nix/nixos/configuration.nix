@@ -115,6 +115,7 @@
       # VPN and network security
       proton-vpn
       wireguard-tools
+      macchanger
 
       # System monitoring and information
       btop
@@ -197,7 +198,7 @@
       PLATFORM_PROFILE_ON_BAT = "balanced";
       PLATFORM_PROFILE_ON_SAV = "low-power";
 
-      START_CHARGE_THRESH_BAT0 = 0;
+      START_CHARGE_THRESH_BAT0 = 1;
       STOP_CHARGE_THRESH_BAT0 = 1;
 
       RESTORE_THRESHOLDS_ON_BAT = 1;

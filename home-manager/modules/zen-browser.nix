@@ -45,12 +45,24 @@ in
 
       AutofillAddressEnabled = false;
       AutofillCreditCardEnabled = false;
+      ClearOnShutdown = {
+        CookiesAndStorage = true;
+        Exceptions = [
+          "https://github.com"
+          "https://web.whatsapp.com"
+          "https://google.com"
+          "https://chatgpt.com"
+          "https://claude.ai"
+          "https://claude.com"
+        ];
+      };
       DisableAppUpdate = false;
       DisableFeedbackCommands = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
       DisableTelemetry = true;
       DontCheckDefaultBrowser = false;
+      ExtensionUpdate = true;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
 

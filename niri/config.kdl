@@ -376,6 +376,18 @@ window-rule {
     open-floating true
 }
 
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"zen-beta$"#
+    opacity 0.875
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
 layer-rule {
     match namespace="awww-daemon"
     place-within-backdrop true

@@ -1,3 +1,4 @@
+.wrangler/
 audacity/
 bluetuith/
 btop/
@@ -28,6 +29,7 @@ autostart/
 chromium/
 go/
 qBittorrent/
+zen/
 mimeapps.list
 QtProject.conf
 zen/*

@@ -9,6 +9,7 @@
     ./modules/zsh-conf.nix
     ./modules/gtk.nix
     ./modules/git.nix
+    ./modules/packettracer.nix
     ./modules/vicinae.nix
     ./modules/zen-browser.nix
   ];
@@ -86,6 +87,7 @@
     # Media and streaming
     vlc
     stremio-service
+    discord
 
     # Torrenting and file synchronization
     qbittorrent
