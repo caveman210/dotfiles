@@ -6,6 +6,7 @@ Code/
 cava/
 compact/
 dconf/
+discord/
 environment.d/
 Element/
 fish/
@@ -29,9 +30,8 @@ autostart/
 chromium/
 go/
 qBittorrent/
-zen/
 mimeapps.list
 QtProject.conf
-zen/*
+zen/
 */.luarc.json
 */.zcompdump

@@ -9,7 +9,6 @@
     ./modules/zsh-conf.nix
     ./modules/gtk.nix
     ./modules/git.nix
-    ./modules/packettracer.nix
     ./modules/vicinae.nix
     ./modules/zen-browser.nix
   ];
