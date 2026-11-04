@@ -29,11 +29,14 @@ Slack/
 vlc/
 zathura/
 Zulip/
+!zen/profiles.ini
+zen/
 autostart/
 chromium/
 go/
 qBittorrent/
 mimeapps.list
 QtProject.conf
+
 */.luarc.json
 */.zcompdump
