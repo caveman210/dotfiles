@@ -27,7 +27,6 @@ Proton/
 systemd/
 Slack/
 vlc/
-zathura/
 Zulip/
 !zen/profiles.ini
 zen/

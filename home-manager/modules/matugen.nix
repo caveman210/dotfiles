@@ -62,9 +62,6 @@ let
         python3 ${helpers}/fix-contrast.py "$HOME/.config/kitty/current-theme.conf"
         pkill -SIGUSR1 kitty 2>/dev/null || true
       fi
-
-      # Zen reads chrome CSS only at startup.
-      # bash ${helpers}/reload-zen.sh
     '';
   };
 
