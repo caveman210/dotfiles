@@ -41,3 +41,4 @@ zen/
 zsh/
 */.luarc.json
 */.zcompdump
+nix/nixos/binaries/CiscoPacketTracer_901_Ubuntu_64bit.deb
