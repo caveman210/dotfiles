@@ -13,13 +13,12 @@ Element/
 fish/
 GIMP/
 git/
-gtk-*/
 hypr/
 libreoffice*/
 mozilla/
 nautilus/
 nextjs-nodejs/
-nix/nixos/binaries/*
+nix/nixos/binaries/
 lazygit/
 obsidian/
 opencode/
@@ -36,9 +35,5 @@ go/
 qBittorrent/
 mimeapps.list
 QtProject.conf
-starship.toml
-zen/
-zsh/
 */.luarc.json
 */.zcompdump
-nix/nixos/binaries/CiscoPacketTracer_901_Ubuntu_64bit.deb
