@@ -41,7 +41,7 @@ let
         # matugen only decodes common web formats. Convert raw/HEIC/JXL/
         # SVG/etc. through ImageMagick first so every listed wallpaper
         # can drive the palette.
-        case "${target,,}" in
+        case "''${target,,}" in
           *.jpg|*.jpeg|*.jpe|*.png|*.apng|*.webp|*.gif|*.bmp|*.tif|*.tiff) ;;
           *)
             tmp_image="$(mktemp --suffix=.png)"
@@ -64,7 +64,7 @@ let
       fi
 
       # Zen reads chrome CSS only at startup.
-      bash ${helpers}/reload-zen.sh
+      # bash ${helpers}/reload-zen.sh
     '';
   };
 

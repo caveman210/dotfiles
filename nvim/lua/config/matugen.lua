@@ -3,16 +3,16 @@ local M = {}
 
 function M.apply()
     local hl = vim.api.nvim_set_hl
-    local bg = "#111418"
-    local fg = "#e1e2e8"
-    local dim = "#c3c6cf"
-    local nontext = "#8d9199"
-    local special = "#a1c9fd"
-    local float_border = "#43474e"
-    local sel = "#272a2f"
+    local bg = "#11131c"
+    local fg = "#e2e1ef"
+    local dim = "#c6c5d3"
+    local nontext = "#90909c"
+    local special = "#bbc3ff"
+    local float_border = "#454651"
+    local sel = "#282934"
     local error = "#ffb4ab"
-    local warning = "#d7bde4"
-    local success = "#bbc7db"
+    local warning = "#d8bbf3"
+    local success = "#cac1ea"
 
     vim.o.termguicolors = true
 
@@ -108,12 +108,12 @@ function M.apply()
     -- Icons (devicons, snacks picker, completion menus).
     hl(0, "DevIconDefault", { fg = special })
     hl(0, "DevIconBlue", { fg = special })
-    hl(0, "DevIconCyan", { fg = "#bbc7db" })
+    hl(0, "DevIconCyan", { fg = "#cac1ea" })
     hl(0, "DevIconGreen", { fg = success })
     hl(0, "DevIconYellow", { fg = warning })
-    hl(0, "DevIconOrange", { fg = "#d7bde4" })
+    hl(0, "DevIconOrange", { fg = "#d8bbf3" })
     hl(0, "DevIconRed", { fg = error })
-    hl(0, "DevIconPurple", { fg = "#1b4975" })
+    hl(0, "DevIconPurple", { fg = "#002bcf" })
     hl(0, "DevIconGrey", { fg = dim })
 
     hl(0, "SnacksPickerIcon", { fg = special })
@@ -145,11 +145,11 @@ function M.apply()
     -- mini.nvim families.
     hl(0, "MiniIconsAzure", { fg = special })
     hl(0, "MiniIconsBlue", { fg = special })
-    hl(0, "MiniIconsCyan", { fg = "#bbc7db" })
+    hl(0, "MiniIconsCyan", { fg = "#cac1ea" })
     hl(0, "MiniIconsGreen", { fg = success })
     hl(0, "MiniIconsGrey", { fg = dim })
     hl(0, "MiniIconsOrange", { fg = warning })
-    hl(0, "MiniIconsPurple", { fg = "#1b4975" })
+    hl(0, "MiniIconsPurple", { fg = "#002bcf" })
     hl(0, "MiniIconsRed", { fg = error })
     hl(0, "MiniIconsYellow", { fg = warning })
 
@@ -225,22 +225,22 @@ function M.apply()
     hl(0, "MiniJump2dSpot", { fg = special, bold = true })
 
     -- Terminal palette so :terminal matches the shell.
-    vim.g.terminal_color_0 = "#1d2024"
+    vim.g.terminal_color_0 = "#1e1f29"
     vim.g.terminal_color_1 = error
     vim.g.terminal_color_2 = success
     vim.g.terminal_color_3 = warning
     vim.g.terminal_color_4 = special
-    vim.g.terminal_color_5 = "#533f5f"
-    vim.g.terminal_color_6 = "#3c4858"
+    vim.g.terminal_color_5 = "#533d6b"
+    vim.g.terminal_color_6 = "#484264"
     vim.g.terminal_color_7 = fg
-    vim.g.terminal_color_8 = "#8d9199"
+    vim.g.terminal_color_8 = "#90909c"
     vim.g.terminal_color_9 = error
     vim.g.terminal_color_10 = success
     vim.g.terminal_color_11 = warning
     vim.g.terminal_color_12 = special
-    vim.g.terminal_color_13 = "#533f5f"
-    vim.g.terminal_color_14 = "#3c4858"
-    vim.g.terminal_color_15 = "#e1e2e8"
+    vim.g.terminal_color_13 = "#533d6b"
+    vim.g.terminal_color_14 = "#484264"
+    vim.g.terminal_color_15 = "#e2e1ef"
 end
 
 M.apply()
