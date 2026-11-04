@@ -12,6 +12,7 @@
     ./modules/git.nix
     ./modules/vicinae.nix
     ./modules/zen-browser.nix
+    ./modules/matugen.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -29,6 +30,14 @@
   nixpkgs.config.allowUnfree = true;
 
   xdg.enable = true;
+
+  # Qt apps follow the GTK palette, which matugen regenerates.
+  qt = {
+    enable = true;
+    platformTheme = {
+      name = "gtk3";
+    };
+  };
   # targets.genericLinux.enable = true;     # for non-NixOS
 
   # The home.packages option allows you to install Nix packages into your
@@ -74,6 +83,8 @@
 
     # Desktop environment and Wayland utilities
     quickshell
+    matugen
+    imagemagick
     awww
     grim
     slurp

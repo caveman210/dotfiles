@@ -8,6 +8,9 @@ require 'config.options'
 require 'config.keymaps'
 require 'config.autocmds'
 
+-- Wallpaper-generated colors (matugen); optional so a fresh clone works.
+pcall(require, 'config.matugen')
+
 -- 2. Bootstrap Lazy Plugin Manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then

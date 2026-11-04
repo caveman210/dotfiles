@@ -7,10 +7,10 @@
       launcher_window.layer_shell.enabled = true;
       theme = {
         dark = {
-          name = "gruvbox-dark";
+          name = "matugen";
         };
         light = {
-          name = "gruvbox-light";
+          name = "matugen";
         };
       };
     };
