@@ -31,6 +31,8 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+      docker = "podman";
+      docker-compose = "podman-compose";
 
       ANDROID_HOME = "$HOME/Android/Sdk";
       JAVA_HOME = "$HOME/DevTools/android-studio/jbr";

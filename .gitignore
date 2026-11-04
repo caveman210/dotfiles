@@ -1,4 +1,5 @@
 .wrangler/
+antigravity/
 audacity/
 bluetuith/
 btop/
@@ -12,6 +13,7 @@ Element/
 fish/
 GIMP/
 git/
+gtk-*/
 hypr/
 libreoffice*/
 mozilla/
@@ -19,6 +21,7 @@ nautilus/
 nextjs-nodejs/
 lazygit/
 obsidian/
+opencode/
 pulse/
 Proton/
 systemd/
@@ -32,6 +35,8 @@ go/
 qBittorrent/
 mimeapps.list
 QtProject.conf
+starship.toml
 zen/
+zsh/
 */.luarc.json
 */.zcompdump

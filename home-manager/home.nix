@@ -2,6 +2,7 @@
   config,
   pkgs,
   nix-index-database,
+  antigravity,
   ...
 }: {
   imports = [
@@ -87,6 +88,7 @@
     vlc
     stremio-service
     discord
+    gimp
 
     # Torrenting and file synchronization
     qbittorrent
@@ -99,6 +101,7 @@
     meson
     ninja
     gh
+    openssl
 
     # Programming languages and package managers
     python3
@@ -111,8 +114,8 @@
     libreoffice
     zathura
 
-    # AI and local LLMs
-    ollama
+    # AI 
+    antigravity.packages.${pkgs.system}.google-antigravity-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -142,6 +145,19 @@
     enable = true;
     # overwriteBackup = true;
   };
+
+services.ollama = {
+  enable = true;
+  
+  # Home Manager natively supports binding parameters:
+  host = "0.0.0.0";
+  port = 11434;
+  
+  # For passing any additional custom variables (like model directories)
+  environmentVariables = {
+    OLLAMA_ORIGINS = "*";
+  };
+};
 
   programs.nix-index-database.comma.enable = true;
   programs.nix-index = {

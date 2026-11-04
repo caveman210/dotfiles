@@ -17,12 +17,18 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    antigravity = {
+      url = "github:jacopone/antigravity-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
     home-manager,
     zen-browser,
     nix-index-database,
+    antigravity,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -44,7 +50,7 @@
 
     homeConfigurations."caveman" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit nix-index-database; inherit inputs; };
+      extraSpecialArgs = { inherit nix-index-database; inherit inputs; inherit antigravity; };
       modules = [
         ./home.nix
       ];
