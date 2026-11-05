@@ -3,6 +3,7 @@
   pkgs,
   nix-index-database,
   antigravity,
+  codex-desktop-linux,
   ...
 }: {
   imports = [
@@ -125,8 +126,9 @@
     libreoffice
     zathura
 
-    # AI 
+    # AI
     antigravity.packages.${pkgs.system}.google-antigravity-cli
+    codex-desktop-linux.packages.${pkgs.system}.codex-desktop
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -157,18 +159,18 @@
     # overwriteBackup = true;
   };
 
-services.ollama = {
-  enable = true;
-  
-  # Home Manager natively supports binding parameters:
-  host = "0.0.0.0";
-  port = 11434;
-  
-  # For passing any additional custom variables (like model directories)
-  environmentVariables = {
-    OLLAMA_ORIGINS = "*";
+  services.ollama = {
+    enable = true;
+
+    # Home Manager natively supports binding parameters:
+    host = "0.0.0.0";
+    port = 11434;
+
+    # For passing any additional custom variables (like model directories)
+    environmentVariables = {
+      OLLAMA_ORIGINS = "*";
+    };
   };
-};
 
   programs.nix-index-database.comma.enable = true;
   programs.nix-index = {

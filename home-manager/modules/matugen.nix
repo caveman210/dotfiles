@@ -1,10 +1,13 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   helpers = ../matugen/scripts;
 
   matugenTheme = pkgs.writeShellApplication {
     name = "matugen-theme";
-    runtimeInputs = with pkgs; [ matugen imagemagick python3 jq procps bash ];
+    runtimeInputs = with pkgs; [matugen imagemagick python3 jq procps bash];
     text = ''
       mode="dark"
       scheme="scheme-tonal-spot"
@@ -67,11 +70,10 @@ let
 
   matugenPreview = pkgs.writeShellApplication {
     name = "matugen-preview";
-    runtimeInputs = with pkgs; [ matugen imagemagick jq bash coreutils ];
+    runtimeInputs = with pkgs; [matugen imagemagick jq bash coreutils];
     text = builtins.readFile (helpers + "/palette-previews.sh");
   };
-in
-{
+in {
   xdg.configFile."matugen/config.toml" = {
     source = ../matugen/config.toml;
     force = true;

@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   home.sessionPath = [
     "$HOME/Android/Sdk/emulator"
     "$HOME/Android/Sdk/platform-tools"

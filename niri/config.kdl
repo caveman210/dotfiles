@@ -392,12 +392,14 @@ window-rule {
 window-rule {
     match app-id=r"^org\.pwmt\.zathura$"
     
-    opacity 0.729
+    opacity 1.0
     
     // You can still keep the background blur effect!
     background-effect {
         blur true
-    }
+        // Helps blend colors smoothly and deepens the dark aesthetic
+        noise 0.11
+     }
 }
 
 layer-rule {

@@ -1,17 +1,17 @@
 # --- PERMANENT TRANSPARENT BACKGROUND ---
-# This forces the outer padding to stay transparent no matter what
+# Keeps the window padding fully transparent across all modes
 set default-bg rgba(0,0,0,0)
 set statusbar-bg rgba(0,0,0,0)
 
-# --- STARTUP VALUES (Mode 1: Opaque White Page) ---
+# --- STARTUP STATE (Mode 1: Opaque White Page) ---
 set recolor true
 set recolor-lightcolor "#ffffff"
 set recolor-darkcolor "#1a1a1a"
 
-# --- THE TOGGLE BINDING (Mode 2: Transparent Page) ---
-# Pressing 't' executes config changes instantly without turning recolor off
-map t exec "zathura --config-ext='set recolor-lightcolor rgba(0,0,0,0); set recolor-darkcolor rgba(255,255,255,1)'"
+# --- THE TOGGLE BINDINGS (Runtime Configuration Changes) ---
+# Pressing 't' inputs internal commands to instantly make the page transparent
+map t feedkeys ":set recolor-lightcolor rgba(0,0,0,0)<Return>:set recolor-darkcolor rgba(255,255,255,1)<Return>"
 
-# Pressing 'T' (Shift+t) reverts it back to Opaque White
-map T exec "zathura --config-ext='set recolor-lightcolor \"#ffffff\"; set recolor-darkcolor \"#1a1a1a\"'"
+# Pressing 'T' (Shift+t) inputs internal commands to snap it back to solid white
+map T feedkeys ":set recolor-lightcolor \#ffffff<Return>:set recolor-darkcolor \#1a1a1a<Return>"
 

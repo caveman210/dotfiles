@@ -147,6 +147,7 @@
       passt
       podman-compose
       libarchive
+      android-tools
 
       # Shell customization
       starship
