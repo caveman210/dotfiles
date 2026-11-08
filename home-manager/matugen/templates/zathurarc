@@ -1,0 +1,36 @@
+# --- PERMANENT TRANSPARENT BACKGROUND ---
+# Keeps the window padding fully transparent across all modes
+set default-bg rgba(0,0,0,0)
+set statusbar-bg rgba(0,0,0,0)
+
+# --- STARTUP STATE (Mode 1: Opaque White Page) ---
+set recolor true
+set recolor-lightcolor "#ffffff"
+set recolor-darkcolor "#1a1a1a"
+
+# --- THE TOGGLE BINDINGS (Runtime Configuration Changes) ---
+# Pressing 't' inputs internal commands to instantly make the page transparent
+map t feedkeys ":set recolor-lightcolor rgba(0,0,0,0)<Return>:set recolor-darkcolor rgba(255,255,255,1)<Return>"
+
+# Pressing 'T' (Shift+t) inputs internal commands to snap it back to solid white
+map T feedkeys ":set recolor-lightcolor \#ffffff<Return>:set recolor-darkcolor \#1a1a1a<Return>"
+
+# --- UI CHROME / OVERLAYS (Matugen Theme) ---
+set statusbar-fg "{{colors.on_surface.default.hex}}"
+set inputbar-bg "{{colors.surface_container_high.default.hex}}"
+set inputbar-fg "{{colors.on_surface.default.hex}}"
+
+set notification-bg "{{colors.surface_container_high.default.hex}}"
+set notification-fg "{{colors.on_surface.default.hex}}"
+set notification-error-bg "{{colors.error_container.default.hex}}"
+set notification-error-fg "{{colors.on_error_container.default.hex}}"
+set notification-warning-bg "{{colors.tertiary_container.default.hex}}"
+set notification-warning-fg "{{colors.on_tertiary_container.default.hex}}"
+
+set highlight-color "{{colors.secondary_container.default.hex}}"
+set highlight-active-color "{{colors.primary_container.default.hex}}"
+
+set completion-bg "{{colors.surface_container.default.hex}}"
+set completion-fg "{{colors.on_surface.default.hex}}"
+set completion-highlight-bg "{{colors.surface_container_high.default.hex}}"
+set completion-highlight-fg "{{colors.primary.default.hex}}"

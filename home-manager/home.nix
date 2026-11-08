@@ -92,6 +92,7 @@
     wl-mirror
     feh
     nautilus
+    hyprlock
 
     # Web browsers
     chromium

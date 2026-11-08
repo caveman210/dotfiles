@@ -28,3 +28,35 @@ output_path = "~/.config/vicinae/themes/matugen.toml"
 [templates.zen]
 input_path = "~/.config/matugen/templates/zen-userChrome.css"
 output_path = "~/.config/zen/default/chrome/userChrome.css"
+
+[templates.yazi]
+input_path = "~/.config/matugen/templates/yazi.toml"
+output_path = "~/.config/yazi/theme.toml"
+
+[templates.btop]
+input_path = "~/.config/matugen/templates/btop.theme"
+output_path = "~/.config/btop/themes/matugen.theme"
+
+[templates.lazygit]
+input_path = "~/.config/matugen/templates/lazygit.yml"
+output_path = "~/.config/lazygit/config.yml"
+
+[templates.cava]
+input_path = "~/.config/matugen/templates/cava.conf"
+output_path = "~/.config/cava/config"
+
+[templates.fzf]
+input_path = "~/.config/matugen/templates/fzf.zsh"
+output_path = "~/.config/fzf/fzf-matugen.zsh"
+
+[templates.zathura]
+input_path = "~/.config/matugen/templates/zathurarc"
+output_path = "~/.config/zathura/zathurarc"
+
+[templates.swaylock]
+input_path = "~/.config/matugen/templates/swaylock.config"
+output_path = "~/.config/swaylock/config"
+
+[templates.hyprlock]
+input_path = "~/.config/matugen/templates/hyprlock.conf"
+output_path = "~/.config/hypr/hyprlock.conf"

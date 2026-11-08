@@ -1,0 +1,119 @@
+# Matugen template for Yazi (theme.toml)
+# Flavor / Colors generated from Material You palette
+
+[mgr]
+cwd = { fg = "#b0c9e6" }
+
+# Hovered
+hovered         = { fg = "#e3e2e4", bg = "#292a2c" }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#e9bf91", italic = true }
+find_position = { fg = "#bec7d4", bg = "reset", bold = true }
+
+# Marker
+marker_copied   = { fg = "#bec7d4", bg = "#bec7d4" }
+marker_cut      = { fg = "#ffb4ab", bg = "#ffb4ab" }
+marker_marked   = { fg = "#b0c9e6", bg = "#b0c9e6" }
+marker_selected = { fg = "#e9bf91", bg = "#e9bf91" }
+
+# Tab
+tab_active   = { fg = "#19324a", bg = "#b0c9e6" }
+tab_inactive = { fg = "#c3c6cd", bg = "#1f2021" }
+tab_width    = 1
+
+# Count
+count_copied   = { fg = "#29313b", bg = "#bec7d4" }
+count_cut      = { fg = "#690005", bg = "#ffb4ab" }
+count_selected = { fg = "#452b08", bg = "#e9bf91" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#43474d" }
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#292a2c", bg = "#292a2c" }
+
+# Mode
+mode_normal = { fg = "#19324a", bg = "#b0c9e6", bold = true }
+mode_select = { fg = "#29313b", bg = "#bec7d4", bold = true }
+mode_unset  = { fg = "#452b08", bg = "#e9bf91", bold = true }
+
+# Progress
+progress_label  = { fg = "#e3e2e4", bold = true }
+progress_normal = { fg = "#b0c9e6", bg = "#292a2c" }
+progress_error  = { fg = "#ffb4ab", bg = "#292a2c" }
+
+# Permissions
+permissions_t = { fg = "#b0c9e6" }
+permissions_r = { fg = "#e9bf91" }
+permissions_w = { fg = "#ffb4ab" }
+permissions_x = { fg = "#bec7d4" }
+permissions_s = { fg = "#8d9197" }
+
+[select]
+border   = { fg = "#43474d" }
+active   = { fg = "#b0c9e6", bold = true }
+inactive = { fg = "#e3e2e4" }
+
+[input]
+border   = { fg = "#43474d" }
+title    = { fg = "#b0c9e6" }
+value    = { fg = "#e3e2e4" }
+selected = { bg = "#292a2c" }
+
+[completion]
+border   = { fg = "#43474d" }
+active   = { fg = "#b0c9e6", bg = "#292a2c" }
+inactive = { fg = "#e3e2e4" }
+
+[tasks]
+border  = { fg = "#43474d" }
+title   = { fg = "#b0c9e6" }
+hovered = { fg = "#e3e2e4", bg = "#292a2c" }
+
+[which]
+mask            = { bg = "#1f2021" }
+cand            = { fg = "#b0c9e6" }
+rest            = { fg = "#c3c6cd" }
+desc            = { fg = "#e3e2e4" }
+separator       = "  "
+separator_style = { fg = "#8d9197" }
+
+[help]
+on      = { fg = "#b0c9e6" }
+run     = { fg = "#bec7d4" }
+desc    = { fg = "#e3e2e4" }
+hovered = { bg = "#292a2c" }
+footer  = { fg = "#c3c6cd", bg = "#1f2021" }
+
+[notify]
+title_info  = { fg = "#b0c9e6" }
+title_warn  = { fg = "#e9bf91" }
+title_error = { fg = "#ffb4ab" }
+
+[filetype]
+rules = [
+  # Images
+  { mime = "image/*", fg = "#bec7d4" },
+
+  # Videos
+  { mime = "video/*", fg = "#e9bf91" },
+  { mime = "audio/*", fg = "#e9bf91" },
+
+  # Archives
+  { mime = "application/*zip", fg = "#ffb4ab" },
+  { mime = "application/x-tar", fg = "#ffb4ab" },
+  { mime = "application/x-bzip*", fg = "#ffb4ab" },
+  { mime = "application/x-7z-compressed", fg = "#ffb4ab" },
+  { mime = "application/x-rar", fg = "#ffb4ab" },
+
+  # Documents
+  { mime = "application/pdf", fg = "#b0c9e6" },
+
+  # Directories
+  { url = "*/", fg = "#b0c9e6" },
+]

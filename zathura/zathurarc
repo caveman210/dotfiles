@@ -15,3 +15,22 @@ map t feedkeys ":set recolor-lightcolor rgba(0,0,0,0)<Return>:set recolor-darkco
 # Pressing 'T' (Shift+t) inputs internal commands to snap it back to solid white
 map T feedkeys ":set recolor-lightcolor \#ffffff<Return>:set recolor-darkcolor \#1a1a1a<Return>"
 
+# --- UI CHROME / OVERLAYS (Matugen Theme) ---
+set statusbar-fg "#e3e2e4"
+set inputbar-bg "#292a2c"
+set inputbar-fg "#e3e2e4"
+
+set notification-bg "#292a2c"
+set notification-fg "#e3e2e4"
+set notification-error-bg "#93000a"
+set notification-error-fg "#ffdad6"
+set notification-warning-bg "#3a2202"
+set notification-warning-fg "#d4ac7f"
+
+set highlight-color "#414a55"
+set highlight-active-color "#0f2940"
+
+set completion-bg "#1f2021"
+set completion-fg "#e3e2e4"
+set completion-highlight-bg "#292a2c"
+set completion-highlight-fg "#b0c9e6"

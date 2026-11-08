@@ -61,6 +61,43 @@
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.user."caveman" = {
+      xdg.mimeApps = {
+        enable = true;
+
+        defaultApplications = {
+          # Websites
+          "text/html" = "zen-beta.desktop";
+          "x-scheme-handler/http" = "zen-beta.desktop";
+          "x-scheme-handler/https" = "zen-beta.desktop";
+          "x-scheme-handler/about" = "zen-beta.desktop";
+          "x-scheme-handler/unknown" = "zen-beta.desktop";
+
+          # PDFs
+          "application/pdf" = "org.pwmt.zathura.desktop";
+
+          # Images
+          "image/jpeg" = "feh.desktop";
+          "image/png" = "feh.desktop";
+          "image/gif" = "feh.desktop";
+          "image/webp" = "feh.desktop";
+          "image/bmp" = "feh.desktop";
+          "image/tiff" = "feh.desktop";
+          "image/svg+xml" = "feh.desktop";
+
+          # Code / Text
+          "text/plain" = "nvim.desktop";
+          "text/x-c" = "nvim.desktop";
+          "text/x-c++" = "nvim.desktop";
+          "text/x-python" = "nvim.desktop";
+          "text/x-shellscript" = "nvim.desktop";
+          "text/x-java" = "nvim.desktop";
+          "text/x-rust" = "nvim.desktop";
+          "text/x-go" = "nvim.desktop";
+          "application/json" = "nvim.desktop";
+          "application/xml" = "nvim.desktop";
+          "text/markdown" = "nvim.desktop";
+        };
+      };
     };
 
     formatter.${pkgs.stdenv.hostPlatform.system} = pkgs.alejandra;

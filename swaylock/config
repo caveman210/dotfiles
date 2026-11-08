@@ -1,0 +1,56 @@
+
+# Swaylock-effects config styled with Matugen
+
+screenshots
+clock
+indicator
+show-failed-attempts
+
+# Frosted blurred desktop background (downscale + fast blur)
+effect-scale=0.7
+effect-blur=3x2
+effect-vignette=0.4:0.6
+fade-in=0.15
+
+font="JetBrainsMono Nerd Font"
+timestr=%H:%M
+datestr=%A, %d %B %Y
+
+# Compact, minimal dial
+indicator-radius=110
+indicator-thickness=7
+indicator-caps-lock
+
+# Transparent fills to highlight the blurred screenshot
+inside-color=00000000
+inside-clear-color=00000000
+inside-ver-color=b0c9e622
+inside-wrong-color=ffb4ab33
+separator-color=00000000
+
+# Sleek rings & outline hierarchy
+line-color=00000000
+line-clear-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+ring-color=43474d88
+key-hl-color=b0c9e6
+bs-hl-color=ffb4ab
+
+ring-ver-color=b0c9e6
+ring-clear-color=e9bf91
+ring-wrong-color=ffb4ab
+
+# Typography
+text-color=e3e2e4
+text-clear-color=e9bf91
+text-ver-color=b0c9e6
+text-wrong-color=ffb4ab
+text-caps-lock-color=e9bf91
+
+grace=2
+grace-no-mouse
+grace-no-touch
+
+

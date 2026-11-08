@@ -30,7 +30,6 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       docker = "podman";
-      docker-compose = "podman-compose";
 
       ANDROID_HOME = "$HOME/Android/Sdk";
       JAVA_HOME = "$HOME/DevTools/android-studio/jbr";
@@ -41,6 +40,7 @@
     };
 
     shellAliases = {
+      docker-compose = "podman-compose";
       ls = "eza --icons -lah";
       cat = "bat";
       androidstudio = "$HOME/DevTools/android-studio/bin/studio.sh";
@@ -95,6 +95,9 @@
 
         npx "$@"
       }
+
+      # Sourcing Matugen fzf theme if present
+      [ -f "$HOME/.config/fzf/fzf-matugen.zsh" ] && . "$HOME/.config/fzf/fzf-matugen.zsh"
 
       [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
     '';

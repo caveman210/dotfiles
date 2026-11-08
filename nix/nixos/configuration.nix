@@ -9,22 +9,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules/boot.nix
     ./modules/packettracer.nix
     ./modules/power.nix
+    ./modules/greetd.nix
   ];
-
-  # Bootloader.
-  boot = {
-    supportedFilesystems = ["ntfs"];
-    loader = {
-      efi.canTouchEfiVariables = true;
-      # grub.enable = false;
-      systemd-boot.enable = true;
-      # refind.enable = true;
-      # refind.package = pkgs.refind;
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -94,7 +83,7 @@
     };
 
     waydroid = {
-      enable = true;
+      enable = false;
       package = pkgs.waydroid-nftables;
     };
 
@@ -111,6 +100,9 @@
     extraGroups = ["networkmanager" "wheel" "video" "audio" "render" "lxc"];
     shell = pkgs.zsh;
     packages = with pkgs; [
+      # Lockscreen
+      hyprlock
+
       # Graphics and display utilities
       mesa-demos
       xwayland-satellite
@@ -148,6 +140,7 @@
       podman-compose
       libarchive
       android-tools
+      file
 
       # Shell customization
       starship
@@ -170,34 +163,19 @@
   services.udisks2.enable = true;
   programs.niri.enable = true;
   programs.zsh.enable = true;
+  
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Display Manager Setup
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-
-  # System-wide qylock module configuration
-  programs.qylock = {
-    enable = true;
-    theme = "sword";
-
-    themeOptions = {
-      terraria.backgroundMode = "time";
-      Genshin.backgroundMode = "time";
-      clockwork.orbital = {
-        themeMode = "dark";
-        enableWindup = true;
-      };
-      osu.gameMode = "menu";
-      sddm.enable = true;
-    };
+    # jack.enable = true;
+    wireplumber.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -207,6 +185,10 @@
     neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     vim
     wl-clipboard
+    sbctl
+    (pkgs.writeShellScriptBin "qjackctl" ''
+      exec ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.qjackctl}/bin/qjackctl "$@"
+    '')
   ];
 
   system.activationScripts.copyConfigToGit = {

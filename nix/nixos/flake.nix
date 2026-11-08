@@ -9,22 +9,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    qylock.url = "github:Darkkal44/qylock";
-    qylock.inputs.nixpkgs.follows = "nixpkgs";
+    # qylock = {
+    #	url = "github:Darkkal44/qylock";
+    #	inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    qylock,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
     nixosConfigurations.nixpad = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        qylock.nixosModules.default
+        # qylock.nixosModules.default
         ./configuration.nix
       ];
     };

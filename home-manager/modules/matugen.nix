@@ -65,6 +65,9 @@
         python3 ${helpers}/fix-contrast.py "$HOME/.config/kitty/current-theme.conf"
         pkill -SIGUSR1 kitty 2>/dev/null || true
       fi
+
+      # Reload cava if running
+      pkill -USR1 cava 2>/dev/null || true
     '';
   };
 

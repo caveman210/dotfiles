@@ -36,6 +36,7 @@ go/
 qBittorrent/
 mimeapps.list
 QtProject.conf
+TMPlayer/
 
 */.luarc.json
 */.zcompdump
