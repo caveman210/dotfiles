@@ -52,6 +52,10 @@
       RUNTIME_PM_ON_AC = "on";
       RUNTIME_PM_ON_BAT = "auto";
     };
+
+    pd = {
+      enable = true;
+    };
   };
 
   services.auto-cpufreq.enable = false;

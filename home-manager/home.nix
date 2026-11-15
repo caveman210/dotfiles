@@ -4,6 +4,7 @@
   nix-index-database,
   antigravity,
   codex-desktop-linux,
+  zapfast-wa,
   ...
 }: {
   imports = [
@@ -97,11 +98,12 @@
     # Web browsers
     chromium
 
-    # Media and streaming
+    # Media, streaming and gaming
     vlc
     stremio-service
     discord
     gimp
+    bottles
 
     # Torrenting and file synchronization
     qbittorrent
@@ -115,6 +117,7 @@
     ninja
     gh
     openssl
+    pkg-config
 
     # Programming languages and package managers
     python3
@@ -130,6 +133,7 @@
     # AI
     antigravity.packages.${pkgs.system}.google-antigravity-cli
     codex-desktop-linux.packages.${pkgs.system}.codex-desktop
+    zapfast-wa.packages.${pkgs.system}.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -150,6 +154,9 @@
   # shell provided by Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    OPENSSL_DIR = "${pkgs.openssl.dev}";
+    OPENSSL_LIB_DIR = "${pkgs.openssl.out}/lib";
   };
 
   home.backupFileExtension = "backup";
@@ -173,10 +180,12 @@
     };
   };
 
-  programs.nix-index-database.comma.enable = true;
+  programs.nix-index-database = {
+    comma.enable = true;
+  };
+
   programs.nix-index = {
     enable = true;
-    package = pkgs.nix-index;
     enableZshIntegration = true;
   };
 }

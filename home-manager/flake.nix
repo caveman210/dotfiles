@@ -34,6 +34,11 @@
       url = "github:ilysenko/codex-desktop-linux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zapfast-wa = {
+      url = "github:crmne/zapfast";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     nixpkgs,
@@ -42,6 +47,7 @@
     nix-index-database,
     antigravity,
     codex-desktop-linux,
+    zapfast-wa,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -109,6 +115,7 @@
         inherit inputs;
         inherit antigravity;
         inherit codex-desktop-linux;
+        inherit zapfast-wa;
       };
       modules = [
         ./home.nix
