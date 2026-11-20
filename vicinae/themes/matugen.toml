@@ -7,25 +7,25 @@ description = "Wallpaper-generated theme"
 variant = "dark"
 
 [colors.core]
-background = "#1e100e"
-foreground = "#f9dcd8"
-secondary_background = "#2b1c1a"
-border = "#5b403d"
-accent = "#ffb4ab"
+background = "#141318"
+foreground = "#e5e1e9"
+secondary_background = "#201f25"
+border = "#47464f"
+accent = "#c7bfff"
 
 [colors.accents]
-blue = "#ffb4ab"
-green = "#ffb4ab"
-magenta = "#a5c8ff"
-orange = "#a5c8ff"
-purple = "#b01818"
+blue = "#c7bfff"
+green = "#c8c3dc"
+magenta = "#ecb8ce"
+orange = "#ecb8ce"
+purple = "#463f77"
 red = "#ffb4ab"
-yellow = "#005aa5"
-cyan = "#7f2a23"
+yellow = "#613b4d"
+cyan = "#474459"
 
 [colors.list.item.selection]
-background = "#372624"
-secondary_background = "#42302e"
+background = "#2a292f"
+secondary_background = "#35343a"
 
 [colors.grid.item]
-background = "#372624"
+background = "#2a292f"

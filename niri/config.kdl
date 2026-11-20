@@ -372,34 +372,60 @@ window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"zen-browser$"# title="^Picture-in-Picture$"
+    match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
     open-floating true
+    opacity 1.0
 }
 
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"zen-beta$"#
-    opacity 0.875
+    match app-id=r#"zen-beta$"# title="^Picture-in-Picture$"
     background-effect {
         blur true
         xray true
     }
 }
 
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id=r#"zen-beta$"# title=r#"Stremio"#
+    match app-id=r#"zen-beta$"# title=r#"YouTube"#
+    exclude app-id=r#"zen-beta$"#
+    opacity 1.0
+}
 
 window-rule {
     match app-id=r"^org\.pwmt\.zathura$"
-    
     opacity 1.0
-    
     // You can still keep the background blur effect!
     background-effect {
         blur true
         // Helps blend colors smoothly and deepens the dark aesthetic
         noise 0.11
      }
+}
+
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
 }
 
 layer-rule {
@@ -715,3 +741,12 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
+
+window-rule {
+    match app-id=r"^md\.obsidian\.Obsidian$"
+    opacity 0.95
+    background-effect {
+        noise 0.375
+    }
+}
+

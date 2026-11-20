@@ -54,7 +54,7 @@
             ;;
         esac
 
-        matugen image "$work_image" --mode "$mode" --type "$scheme" --contrast "$contrast" --prefer saturation
+        matugen image "$work_image" --mode "$mode" --type "$scheme" --contrast "$contrast" --source-color-index 0
       else
         matugen color hex "$target" --mode "$mode" --type "$scheme" --contrast "$contrast"
       fi

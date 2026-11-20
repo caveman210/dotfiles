@@ -24,7 +24,6 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    neovim
     vim
     wl-clipboard
     sbctl

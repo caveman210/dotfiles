@@ -1,0 +1,39 @@
+/* Matugen Material Design 3 CSS Theme for ZapFast */
+:root {
+  /* Surface & Background */
+  --zapfast-window: {{colors.surface.default.hex}};
+  --zapfast-panel: {{colors.surface_container_low.default.hex}};
+  --zapfast-surface: {{colors.surface_container.default.hex}};
+  --zapfast-surface-hover: {{colors.surface_container_high.default.hex}};
+  --zapfast-surface-active: {{colors.surface_container_highest.default.hex}};
+  --zapfast-overlay: {{colors.surface_container_highest.default.hex}};
+  --zapfast-outline: {{colors.outline_variant.default.hex}};
+
+  /* Text & Typography */
+  --zapfast-text: {{colors.on_surface.default.hex}};
+  --zapfast-secondary: {{colors.on_surface_variant.default.hex}};
+  --zapfast-dim: {{colors.outline.default.hex}};
+
+  /* Accent & Interactive */
+  --zapfast-accent: {{colors.primary.default.hex}};
+  --zapfast-accent-hover: {{colors.primary_fixed_dim.default.hex}};
+  --zapfast-on-accent: {{colors.on_primary.default.hex}};
+  --zapfast-danger: {{colors.error.default.hex}};
+  --zapfast-warning: {{colors.tertiary.default.hex}};
+
+  /* Chat Specific */
+  --zapfast-chat: {{colors.surface_container_lowest.default.hex}};
+  --zapfast-bubble-in: {{colors.surface_container_high.default.hex}};
+  --zapfast-bubble-out: {{colors.primary_container.default.hex}};
+  --zapfast-link: {{colors.primary.default.hex}};
+  --zapfast-read: {{colors.tertiary.default.hex}};
+  --zapfast-shadow: {{colors.shadow.default.hex}};
+}
+
+/* GTK / libadwaita compatible definitions */
+@define-color zapfast_window {{colors.surface.default.hex}};
+@define-color zapfast_panel {{colors.surface_container_low.default.hex}};
+@define-color zapfast_accent {{colors.primary.default.hex}};
+@define-color zapfast_text {{colors.on_surface.default.hex}};
+@define-color zapfast_bubble_in {{colors.surface_container_high.default.hex}};
+@define-color zapfast_bubble_out {{colors.primary_container.default.hex}};

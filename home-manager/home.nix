@@ -82,6 +82,10 @@
     cava
     vicinae
     gammastep
+    (neovim.override {
+      extraLuaPackages = ps: [ ps.magick ];
+    })
+    ghostscript
 
     # Desktop environment and Wayland utilities
     quickshell
@@ -101,6 +105,7 @@
     # Media, streaming and gaming
     vlc
     stremio-service
+    mpv
     discord
     gimp
     bottles
@@ -133,7 +138,7 @@
     # AI
     antigravity.packages.${pkgs.system}.google-antigravity-cli
     codex-desktop-linux.packages.${pkgs.system}.codex-desktop
-    zapfast-wa.packages.${pkgs.system}.default
+    # zapfast-wa.packages.${pkgs.system}.default - use appImage until u can fix the openSSL error
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

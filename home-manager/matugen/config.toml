@@ -60,3 +60,16 @@ output_path = "~/.config/swaylock/config"
 [templates.hyprlock]
 input_path = "~/.config/matugen/templates/hyprlock.conf"
 output_path = "~/.config/hypr/hyprlock.conf"
+
+[templates.obsidian]
+input_path = "~/.config/matugen/templates/obsidian.css"
+output_path = "~/Documents/Obsidian/.obsidian/snippets/matugen.css"
+
+[templates.zapfast]
+input_path = "~/.config/home-manager/matugen/templates/zapfast.json"
+output_path = "~/.config/zapfast/themes/matugen.json"
+post_hook = "zapfast reload-themes 2>/dev/null || true"
+
+[templates.zapfast_css]
+input_path = "~/.config/home-manager/matugen/templates/zapfast.css"
+output_path = "~/.config/zapfast/themes/matugen.css"
