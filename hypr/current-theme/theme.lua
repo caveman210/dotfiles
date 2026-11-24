@@ -1,0 +1,1 @@
+/home/caveman/.config/quickshell/styles/themes/monochrome/HyprTheme.lua

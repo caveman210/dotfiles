@@ -106,6 +106,9 @@ hl.config({
 		workspace_swipe_distance = 300,
 		workspace_swipe_forever = true,
 	},
+	xwayland = {
+		force_zero_scaling = true,
+	},
 })
 
 -- Trackpoint disabled (ported from niri)
@@ -232,10 +235,11 @@ hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 
 -- Dedicated auto-launching terminal scratchpad on SUPER + ` (grave)
-hl.workspace_rule({
-	workspace = "special:terminal",
-	on_created_empty = "kitty",
-})
+hl.on("workspace.created", function(ws)
+	if ws.name == "special:terminal" and ws.is_empty then
+		hl.exec_cmd("kitty", { workspace = "special:terminal silent" })
+	end
+end)
 hl.bind(mainMod .. " + grave", hl.dsp.workspace.toggle_special("terminal"))
 
 -- Relative Workspaces

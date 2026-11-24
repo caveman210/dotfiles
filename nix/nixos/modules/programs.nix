@@ -21,10 +21,19 @@
     binfmt = true;
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
-  ];
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.symbols-only
+    ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts.monospace = [
+        "JetBrainsMono Nerd Font Mono"
+      ];
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     kitty
