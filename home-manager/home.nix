@@ -129,6 +129,11 @@
     nodejs
     lua
     luarocks
+    cargo
+    rustc
+    rust-analyzer
+    man-pages
+    man-pages-posix
 
     # Productivity and document management
     obsidian

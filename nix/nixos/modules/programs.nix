@@ -1,7 +1,6 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
 
-  programs.niri.enable = true;
   programs.zsh.enable = true;
 
   programs.nix-ld = {
@@ -10,6 +9,11 @@
       stdenv.cc.cc.lib
       zlib
     ];
+  };
+
+  programs.gpu-screen-recorder = {
+    enable = false;
+    ui.enable = false; # For overlay
   };
 
   programs.appimage = {
@@ -27,6 +31,7 @@
     vim
     wl-clipboard
     sbctl
+    # gpu-screen-recorder-gtk    #'deprecated' GTK interface
     # libvirt
     (pkgs.writeShellScriptBin "qjackctl" ''
       exec ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.qjackctl}/bin/qjackctl "$@"

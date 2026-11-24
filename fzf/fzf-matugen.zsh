@@ -1,6 +1,6 @@
 # Matugen theme for fzf
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
---color=bg+:-1,bg:-1,spinner:#ecb8ce,hl:#c7bfff \
---color=fg:#e5e1e9,header:#c7bfff,info:#c8c3dc,pointer:#c7bfff \
---color=marker:#ecb8ce,fg+:#e5e1e9,prompt:#c7bfff,hl+:#c7bfff \
---color=selected-bg:#2a292f,border:#47464f"
+--color=bg+:-1,bg:-1,spinner:#a5c8ff,hl:#ffb4ab \
+--color=fg:#f9dcd8,header:#ffb4ab,info:#ffb4ab,pointer:#ffb4ab \
+--color=marker:#a5c8ff,fg+:#f9dcd8,prompt:#ffb4ab,hl+:#ffb4ab \
+--color=selected-bg:#372624,border:#5b403d"
