@@ -82,10 +82,6 @@
     cava
     vicinae
     gammastep
-    (neovim.override {
-      extraLuaPackages = ps: [ ps.magick ];
-    })
-    ghostscript
 
     # Desktop environment and Wayland utilities
     quickshell
@@ -106,7 +102,6 @@
     vlc
     stremio-service
     mpv
-    discord
     gimp
     bottles
 
@@ -115,23 +110,19 @@
     syncthing
 
     # Development tools and build systems
+    neovim
     gcc
     gdb
     gnumake
     meson
     ninja
-    gh
     openssl
-    pkg-config
 
     # Programming languages and package managers
     python3
     nodejs
     lua
     luarocks
-    cargo
-    rustc
-    rust-analyzer
     man-pages
     man-pages-posix
 

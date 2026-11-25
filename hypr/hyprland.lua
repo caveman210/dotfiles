@@ -160,7 +160,8 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.config/quickshell/scripts/volume.sh mute"), { locked = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("~/.config/quickshell/scripts/volume.sh mic-mute"), { locked = true })
+hl.bind("XF86Favorites", hl.dsp.exec_cmd("~/.config/quickshell/scripts/power-mode.sh"), { locked = true })
 
 -- Media Controls
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })

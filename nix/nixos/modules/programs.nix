@@ -36,9 +36,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    kitty
     vim
-    wl-clipboard
     sbctl
     # gpu-screen-recorder-gtk    #'deprecated' GTK interface
     # libvirt

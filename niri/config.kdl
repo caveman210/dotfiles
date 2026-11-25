@@ -493,7 +493,8 @@ binds {
     XF86AudioRaiseVolume repeat=true allow-when-locked=true { spawn-sh "~/.config/quickshell/scripts/volume.sh up"; }
     XF86AudioLowerVolume repeat=true allow-when-locked=true { spawn-sh "~/.config/quickshell/scripts/volume.sh down"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "~/.config/quickshell/scripts/volume.sh mute"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "~/.config/quickshell/scripts/volume.sh mic-mute"; }
+    XF86Favorites        allow-when-locked=true { spawn-sh "~/.config/quickshell/scripts/power-mode.sh"; }
 
     // Example media keys mapping using playerctl.
     // This will work with any MPRIS-enabled media player.

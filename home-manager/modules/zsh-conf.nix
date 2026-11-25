@@ -1,15 +1,6 @@
 {...}: {
   home.sessionPath = [
-    "$HOME/Android/Sdk/emulator"
-    "$HOME/Android/Sdk/platform-tools"
-    "$HOME/Android/Sdk/cmdline-tools/latest/bin"
-    "$HOME/Android/Sdk/tools/bin"
-
-    "$HOME/DevTools/android-studio/jbr/bin"
-    "$HOME/DevTools/flutter/bin"
-    "$HOME/.cargo/bin"
-    "$HOME/.local/share/pnpm"
-    "$HOME/.pyenv/bin"
+   "$HOME/.cargo/bin"
   ];
 
   programs.zsh = {
@@ -31,19 +22,14 @@
       VISUAL = "nvim";
       docker = "podman";
 
-      ANDROID_HOME = "$HOME/Android/Sdk";
-      JAVA_HOME = "$HOME/DevTools/android-studio/jbr";
       CHROME_EXECUTABLE = "/usr/bin/chromium";
-      PYENV_ROOT = "$HOME/.pyenv";
-      NVM_DIR = "$HOME/.nvm";
-      PNPM_HOME = "$HOME/.local/share/pnpm";
     };
 
     shellAliases = {
       docker-compose = "podman-compose";
       ls = "eza --icons -lah";
       cat = "bat";
-      androidstudio = "$HOME/DevTools/android-studio/bin/studio.sh";
+      cd = "z";
     };
 
     initContent = ''
@@ -52,50 +38,6 @@
       setopt extendedglob
       setopt notify
 
-      # Lazy-load pyenv
-      pyenv() {
-        unset -f pyenv
-        eval "$(command pyenv init -)"
-        pyenv "$@"
-      }
-
-      # Lazy-load NVM
-      nvm() {
-        unset -f nvm node npm npx
-
-        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-        nvm "$@"
-      }
-
-      node() {
-        unset -f nvm node npm npx
-
-        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-        node "$@"
-      }
-
-      npm() {
-        unset -f nvm node npm npx
-
-        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-        npm "$@"
-      }
-
-      npx() {
-        unset -f nvm node npm npx
-
-        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-
-        npx "$@"
-      }
-
       # Sourcing Matugen fzf theme if present
       [ -f "$HOME/.config/fzf/fzf-matugen.zsh" ] && . "$HOME/.config/fzf/fzf-matugen.zsh"
 
@@ -103,7 +45,10 @@
     '';
   };
 
-  programs.zoxide.enableZshIntegration = true;
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 
   programs.starship = {
     enable = true;
@@ -115,7 +60,6 @@
       palette = "earthy";
 
       palettes.earthy = {
-        # Standard colors
         blue = "#A68C8A";
         red = "#40170E";
         green = "#594347";
@@ -125,7 +69,6 @@
         white = "#D9CCCC";
         black = "#0D0D0D";
 
-        # Extended palette
         rosewater = "#D9CCCC";
         flamingo = "#A68C8A";
         pink = "#594347";
@@ -137,12 +80,10 @@
         sapphire = "#594347";
         lavender = "#40170E";
 
-        # Text shades
         text = "#D9CCCC";
         subtext1 = "#A68C8A";
         subtext0 = "#594347";
 
-        # Surface shades
         overlay2 = "#594347";
         overlay1 = "#A68C8A";
         overlay0 = "#40170E";
