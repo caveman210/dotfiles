@@ -94,6 +94,8 @@
     feh
     nautilus
     hyprlock
+    geoclue2
+    geobug
 
     # Web browsers
     chromium
@@ -110,6 +112,7 @@
     syncthing
 
     # Development tools and build systems
+    lmstudio
     neovim
     gcc
     gdb
@@ -165,20 +168,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager = {
     enable = true;
-    # overwriteBackup = true;
-  };
-
-  services.ollama = {
-    enable = true;
-
-    # Home Manager natively supports binding parameters:
-    host = "0.0.0.0";
-    port = 11434;
-
-    # For passing any additional custom variables (like model directories)
-    environmentVariables = {
-      OLLAMA_ORIGINS = "*";
-    };
   };
 
   programs.nix-index-database = {

@@ -10,7 +10,6 @@
 
 {
    "$schema": "https://vicinae.com/schemas/config.json",
-   "encrypt_sensitive_data": true,
    "theme": {
       "light": {
          "name": "matugen"
@@ -22,6 +21,27 @@
    "launcher_window": {
       "layer_shell": {
          "enabled": true
+      }
+   },
+   "providers": {
+      "ai": {
+         "preferences": {
+            "providers": {
+               "local": {
+                  "type": "local",
+                  "fields": {
+                     "device": "cpu"
+                  }
+               },
+               "ollama": {
+                  "type": "ollama",
+                  "fields": {}
+               }
+            },
+            "defaultModel": "ollama:qwen2.5-coder:1.5b",
+            "instructions": "",
+            "enableTools": true
+         }
       }
    }
 }

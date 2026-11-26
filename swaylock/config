@@ -24,7 +24,7 @@ indicator-caps-lock
 # Transparent fills to highlight the blurred screenshot
 inside-color=00000000
 inside-clear-color=00000000
-inside-ver-color=b3c5ff22
+inside-ver-color=b5c9d622
 inside-wrong-color=ffb4ab33
 separator-color=00000000
 
@@ -34,20 +34,20 @@ line-clear-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
 
-ring-color=44465188
-key-hl-color=b3c5ff
+ring-color=43474b88
+key-hl-color=b5c9d6
 bs-hl-color=ffb4ab
 
-ring-ver-color=b3c5ff
-ring-clear-color=d1bdf6
+ring-ver-color=b5c9d6
+ring-clear-color=e4bfa7
 ring-wrong-color=ffb4ab
 
 # Typography
-text-color=e1e2ef
-text-clear-color=d1bdf6
-text-ver-color=b3c5ff
+text-color=e4e2e2
+text-clear-color=e4bfa7
+text-ver-color=b5c9d6
 text-wrong-color=ffb4ab
-text-caps-lock-color=d1bdf6
+text-caps-lock-color=e4bfa7
 
 grace=2
 grace-no-mouse
