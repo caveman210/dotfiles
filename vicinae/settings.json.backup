@@ -27,18 +27,14 @@
       "ai": {
          "preferences": {
             "providers": {
-               "local": {
-                  "type": "local",
+               "llama-cpp": {
+                  "type": "llama-cpp",
                   "fields": {
-                     "device": "cpu"
+                     "name": "LM Studio"
                   }
-               },
-               "ollama": {
-                  "type": "ollama",
-                  "fields": {}
                }
             },
-            "defaultModel": "ollama:qwen2.5-coder:1.5b",
+            "defaultModel": "none",
             "instructions": "",
             "enableTools": true
          }

@@ -142,15 +142,16 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    # # This will create a copy of 'dotfiles/screenrc' in the Nix store.
-    # ".screenrc".source = dotfiles/screenrc;
+  xdg.dataFile."fonts/home-manager" = {
+    source = ./assets/fonts;
+    force = true;
+  };
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #    org.gradle.console=verbose
-    #    org.gradle.daemon.idletimeout=3600000
-    # '';
+  home.file = {
+    "Pictures/Wallpapers" = {
+      source = ./assets/walls;
+      force = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through

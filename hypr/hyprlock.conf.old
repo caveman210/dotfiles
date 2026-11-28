@@ -1,0 +1,178 @@
+# Hyprlock configuration styled with Matugen
+
+general {
+    disable_loading_bar = true
+    hide_cursor = true
+    grace = 2
+    no_fade_in = false
+    immediate_render = true
+}
+
+background {
+    monitor =
+    path = screenshot
+    blur_passes = 3
+    blur_size = 7
+    noise = 0.0117
+    contrast = 0.8916
+    brightness = 0.8172
+    vibrancy = 0.1696
+    vibrancy_darkness = 0.0
+}
+
+# TIME (Hours : Minutes)
+label {
+    monitor =
+    text = cmd[update:1000] echo "$(date +"%H:%M")"
+    color = rgb(a8cbe5)
+    font_size = 90
+    font_family = JetBrainsMono Nerd Font Bold
+    position = 0, 160
+    halign = center
+    valign = center
+    shadow_passes = 2
+    shadow_size = 4
+    shadow_color = rgba(0, 0, 0, 0.4)
+}
+
+# DATE
+label {
+    monitor =
+    text = cmd[update:60000] echo "$(date +"%A, %d %B %Y")"
+    color = rgb(e3e2e4)
+    font_size = 20
+    font_family = JetBrainsMono Nerd Font
+    position = 0, 80
+    halign = center
+    valign = center
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.4)
+}
+
+# PASSWORD INPUT FIELD
+input-field {
+    monitor =
+    size = 280, 50
+    outline_thickness = 2
+    dots_size = 0.22
+    dots_spacing = 0.2
+    dots_center = true
+    dots_rounding = -1
+
+    rounding = 25
+    fade_on_empty = false
+    placeholder_text = <span foreground="##c2c7cd88">Password...</span>
+    hide_input = false
+
+    outer_color = rgba(42474c88)
+    inner_color = rgba(333537bb)
+    font_color = rgb(e3e2e4)
+
+    check_color = rgb(a8cbe5)
+    fail_color = rgb(ffb4ab)
+    fail_text = <i>$FAIL <b>($ATTEMPTS)</b></i>
+    fail_transition = 300
+
+    capslock_color = rgb(eebd8f)
+    bothlock_color = -1
+    invert_numlock = false
+    swap_font_color = false
+
+    position = 0, -50
+    halign = center
+    valign = center
+    shadow_passes = 2
+    shadow_size = 4
+    shadow_color = rgba(0, 0, 0, 0.3)
+}
+
+# WEATHER (Top of screen, two-column native labels)
+label {
+    monitor =
+    text = cmd[update:900000] /home/caveman/.config/hypr/scripts/hyprlock-weather.sh --left
+    color = rgb(e3e2e4)
+    font_size = 28
+    font_family = JetBrainsMono Nerd Font Bold
+    position = -125, -24
+    halign = center
+    valign = top
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.45)
+}
+
+label {
+    monitor =
+    text = cmd[update:900000] /home/caveman/.config/hypr/scripts/hyprlock-weather.sh --cond
+    color = rgb(e3e2e4)
+    font_size = 13
+    font_family = JetBrainsMono Nerd Font Bold
+    text_align = left
+    position = 40, -24
+    halign = center
+    valign = top
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.45)
+}
+
+label {
+    monitor =
+    text = cmd[update:900000] /home/caveman/.config/hypr/scripts/hyprlock-weather.sh --city
+    color = rgb(c2c7cd)
+    font_size = 11
+    font_family = JetBrainsMono Nerd Font
+    text_align = left
+    position = 40, -45
+    halign = center
+    valign = top
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.45)
+}
+
+# MUSIC PLAYER (Bottom-center native labels + album art)
+image {
+    monitor =
+    path = /tmp/hyprlock-art.png
+    size = 64
+    rounding = 14
+    border_size = 0
+    position = -185, 24
+    halign = center
+    valign = bottom
+    zindex = 10
+    reload_time = 2
+    reload_cmd = /home/caveman/.config/hypr/scripts/hyprlock-media.sh --art
+}
+
+label {
+    monitor =
+    text = cmd[update:2000] /home/caveman/.config/hypr/scripts/hyprlock-media.sh --title
+    color = rgb(e3e2e4)
+    font_size = 15
+    font_family = JetBrainsMono Nerd Font Bold
+    text_align = left
+    position = 25, 58
+    halign = center
+    valign = bottom
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.4)
+}
+
+label {
+    monitor =
+    text = cmd[update:2000] /home/caveman/.config/hypr/scripts/hyprlock-media.sh --artist
+    color = rgb(a8cbe5)
+    font_size = 12
+    font_family = JetBrainsMono Nerd Font
+    text_align = left
+    position = 25, 34
+    halign = center
+    valign = bottom
+    shadow_passes = 2
+    shadow_size = 3
+    shadow_color = rgba(0, 0, 0, 0.4)
+}

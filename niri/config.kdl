@@ -397,7 +397,7 @@ window-rule {
 
 window-rule {
     match app-id=r"^org\.pwmt\.zathura$"
-    opacity 1.0
+    opacity 0.7
     // You can still keep the background blur effect!
     background-effect {
         blur true

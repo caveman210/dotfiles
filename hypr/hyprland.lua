@@ -70,7 +70,7 @@ hl.config({
 	decoration = {
 		blur = {
 			enabled = true,
-			size = 8,
+			size = 12,
 			passes = 2,
 			vibrancy = 0.1696,
 		},
@@ -303,9 +303,9 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "zathura",
-	match = { class = "org.pwmt.zathura" },
-	opacity = 1.0,
+	name = "zen-beta",
+	match = { class = "^(zen-beta)$" },
+	opacity = 0.87,
 })
 
 hl.window_rule({
